@@ -16,9 +16,26 @@
     <p>Input what’s confusing or overwhelming and get it structured. This will help you sort tasks, goals, and ideas effectively.</p>
 
     <section>
-        <h2>Example Input</h2>
-        <p>Future version: interactive forms where users can list tasks or questions and see them organized by priority or category.</p>
-    </section>
+    <h2>Quick Task Input</h2>
+    <p>Type something that’s confusing or overwhelming:</p>
+    <input type="text" id="taskInput" placeholder="Your task or idea here">
+    <button onclick="addTask()">Add</button>
+
+    <ul id="taskList"></ul>
+
+    <script>
+        function addTask() {
+            const input = document.getElementById('taskInput');
+            const list = document.getElementById('taskList');
+            if(input.value.trim() !== "") {
+                const li = document.createElement('li');
+                li.textContent = input.value;
+                list.appendChild(li);
+                input.value = "";
+            }
+        }
+    </script>
+</section>
 
     <section>
         <h2>Tips for Organization</h2>
